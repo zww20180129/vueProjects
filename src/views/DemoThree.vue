@@ -1,6 +1,8 @@
 <template>
   <div class="demoThree">
-	  <div>demoThree页面<div>
+	  <div>
+         <h3> demoThree页面</h3>
+    <div>
   </div>
 </template>
 
