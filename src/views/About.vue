@@ -1,5 +1,6 @@
 <template>
   <div class="about">
+    <el-button type="primary">主要按钮</el-button>
     <el-container>
       <el-header>Header</el-header>
       <el-container>
