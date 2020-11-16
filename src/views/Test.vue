@@ -1,17 +1,29 @@
 <template>
   <div class="test">
-    <el-card class="box-card">
-      <div v-for="o in 4" :key="o" class="text item">
-        {{ '列表内容 ' + o }}
-      </div>
-    </el-card>
+    <el-transfer v-model="value" :data="data"></el-transfer>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'Test',
-}
+  export default {
+    data() {
+      const generateData = _ => {
+        const data = [];
+        for (let i = 1; i <= 15; i++) {
+          data.push({
+            key: i,
+            label: `备选项 ${ i }`,
+            disabled: i % 4 === 0
+          });
+        }
+        return data;
+      };
+      return {
+        data: generateData(),
+        value: [1, 4]
+      };
+    }
+  };
 </script>
 <style scoped>
 .text {
