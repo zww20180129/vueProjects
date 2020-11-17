@@ -1,15 +1,26 @@
 <template>
   <div class="about">
-    <el-button type="primary">主要按钮</el-button>
-    <el-container>
-      <el-header>Header</el-header>
-      <el-container>
-        <el-aside width="200px">Aside</el-aside>
-        <el-container>
-          <el-main>Main</el-main>
-          <el-footer>Footer</el-footer>
-        </el-container>
-      </el-container>
-    </el-container>
+    <el-transfer v-model="value" :data="data"></el-transfer>
   </div>
 </template>
+<script>
+  export default {
+    data() {
+      const generateData = _ => {
+        const data = [];
+        for (let i = 1; i <= 15; i++) {
+          data.push({
+            key: i,
+            label: `备选项 ${ i }`,
+            disabled: i % 4 === 0
+          });
+        }
+        return data;
+      };
+      return {
+        data: generateData(),
+        value: [1, 4]
+      };
+    }
+  };
+</script>
