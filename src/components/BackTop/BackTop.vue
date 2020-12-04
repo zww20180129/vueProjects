@@ -1,0 +1,23 @@
+<template>
+  <div class="pages-content-scroll">
+    <el-backtop target=".page-component__scroll"></el-backtop>
+    <slot></slot>
+  </div>
+</template>
+<script>
+export default {
+  name: 'BackTop',
+  components: {},
+}
+</script>
+<style  scoped>
+.pages-content-scroll {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow-x: hidden;
+}
+</style>

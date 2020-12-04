@@ -5,6 +5,7 @@ import store from './store'
 import moment from 'moment'; //导入模块
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import './globalComponents'
 Vue.use(ElementUI);
 moment.locale('zh-cn'); //设置语言 或 moment.lang('zh-cn'); 
 Vue.prototype.$moment = moment;//赋值使用
