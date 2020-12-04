@@ -24,6 +24,11 @@ Vue.use(VueRouter)
     path: '/backTopTwo',
     name: 'BackTopTwo',
     component: () => import(/* webpackChunkName: "BackTopTwo" */ '../views/BackTopTwo.vue')
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import(/* webpackChunkName: "Login" */ '../views/Login.vue')
   }
 ]
 

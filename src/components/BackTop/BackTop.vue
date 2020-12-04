@@ -1,6 +1,6 @@
 <template>
-  <div class="pages-content-scroll">
-    <el-backtop target=".page-component__scroll"></el-backtop>
+  <div class="page-component-scroll">
+    <el-backtop target=".page-component-scroll"></el-backtop>
     <slot></slot>
   </div>
 </template>
@@ -11,7 +11,7 @@ export default {
 }
 </script>
 <style  scoped>
-.pages-content-scroll {
+.page-component-scroll {
   height: 100vh;
   position: absolute;
   top: 0;
