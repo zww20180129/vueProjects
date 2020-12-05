@@ -2,7 +2,21 @@
   <div class="login">
     <h1>普通登录组件</h1>
     <div class="account">
-      <account-login :rule-form="ruleForm" :rules="rules" @submit="submit" @errHandle="errHandle"></account-login>
+      <account-login
+        :rule-form="ruleForm"
+        :rules="rules"
+        @submit="submit"
+        @errHandle="errHandle"
+      ></account-login>
+    </div>
+    <h1>短信验证码登录组件</h1>
+    <div class="phone">
+      <phone-login
+        :rule-form="phoneForm"
+        @send="send"
+        @submit="submit"
+        @errHandle="errHandle"
+      ></phone-login>
     </div>
   </div>
 </template>
@@ -14,6 +28,10 @@ export default {
       ruleForm: {
         username: '',
         password: '',
+      },
+      phoneForm: {
+        phone: '',
+        code: '',
       },
       rules: {
         username: [
@@ -52,6 +70,10 @@ export default {
     errHandle() {
       this.$message.error('表单填写有误')
     },
+    send() {
+      //这里可以写发送验证码成功后的逻辑
+      this.$message.info('发送验证码成功')
+    },
   },
 }
 </script>
@@ -60,7 +82,8 @@ export default {
   margin: 30px;
   margin-left: 30px;
 }
-.account {
+.account,
+.phone {
   width: 500px;
 }
 </style>
